@@ -1,0 +1,28 @@
+server:
+  port: 8088
+spring:
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://222.73.56.26:5432/ghost_dev
+    username: ghost_dev
+    password: program
+    driver-class-name: org.postgresql.Driver
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+aop:
+  auto: true
+  proxy-target-class: false
